@@ -13,6 +13,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -135,7 +136,7 @@ class MainActivity : ComponentActivity() {
         val intent = baseTimerIntent(settings).apply {
             action = TimerService.ACTION_START
         }
-        startForegroundService(intent)
+        ContextCompat.startForegroundService(this, intent)
     }
 
     private fun pauseTimer(settings: Settings) {
