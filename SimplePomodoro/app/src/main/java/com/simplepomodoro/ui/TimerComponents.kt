@@ -53,7 +53,7 @@ fun TimerHeroCard(
             )
 
             LinearProgressIndicator(
-                progress = { progressPercent / 100f },
+                progress = progressPercent / 100f,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(8.dp),
